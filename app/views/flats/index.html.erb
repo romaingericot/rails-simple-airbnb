@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <% @flats.each do |flat| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.description %></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- name, address, description, price_per_night number_of_guests -->

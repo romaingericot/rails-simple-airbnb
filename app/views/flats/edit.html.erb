@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row m-3">
-    <h1>Add flat</h1>
+    <h1>Update flat <%= @flat.name %></h1>
   </div>
 
   <div class="row m-3">
@@ -14,7 +14,7 @@
         <%= f.input :price_per_night %>
         <%= f.input :number_of_guests, collection: 0..20 %>
 
-        <%= f.submit "Add my flat", class: "btn btn-primary" %>
+        <%= f.submit "Update my flat", class: "btn btn-primary" %>
         <%= link_to "Back to flats", flats_path, class: "btn btn-secondary" %>
       <% end %>
 

@@ -1,18 +1,30 @@
 <div class="container">
+
+  <div class="row m-3">
+    <h1>Our <%= Flat.count %> Flats</h1>
+  </div>
+
   <div class="row">
-    <div class="col-6">
-      <% @flats.each do |flat| %>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"><%= flat.name %></h5>
-          <p class="card-text"><%= flat.description %></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <% @flats.each do |flat| %>
+      <div class="col-sm-6">
+        <div class="card m-3">
+          <img class="card-img-top" src="https://source.unsplash.com/286x180/?flat,house" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text"><%= flat.description %></p>
+            <p class="card-text"><%= flat.address %></p>
+
+            <div class="d-flex justify-content-between mt-3 mb-3">
+              <i class="fas fa-user-friends"> <%= flat.number_of_guests %></i>
+              <i class="fas fa-tags"> <%= flat.price_per_night %> €</i>
+            </div>
+
+            <%= link_to "More info", flat_path(flat), class: "btn btn-primary" %>
+            <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-secondary" %>
+            <%= link_to "Remove", flat_path(flat), method: :delete, data: { confirm: "Are you sure ?" }, class: "btn btn-danger" %>
+          </div>
         </div>
-        <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
-
-<!-- name, address, description, price_per_night number_of_guests -->

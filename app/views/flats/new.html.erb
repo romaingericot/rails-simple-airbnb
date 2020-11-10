@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="row m-3">
+    <h1>Add flat</h1>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-6 offset-3">
+    <%= simple_form_for(@flat) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :price_per_night %>
+      <%= f.input :number_of_guests, collection: 0..20 %>
+
+      <%= f.submit "Add restaurant", class: "btn btn-primary" %>
+      <%= link_to "Back to flats", flats_path, class: "btn btn-secondary" %>
+    <% end %>
+
+  </div>
+  </div>
+
+</div>
